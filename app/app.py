@@ -5,7 +5,12 @@ import numpy as np
 # Load model
 
 
-model = joblib.load("notebooks/models/fraud_model.pkl")
+import os
+import joblib
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model_path = os.path.join(BASE_DIR, "notebooks", "models", "fraud_model.pkl")
+model = joblib.load(model_path)
 # Page config
 st.set_page_config(
     page_title="Fraud Detection System",
